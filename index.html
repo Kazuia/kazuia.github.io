@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+  <script>
+    function deleteData(url) {
+      let headers = {
+          Accept: 'application/vnd.heroku+json; version=3',
+          Authorization: 'Bearer 8c6de3c5-780e-4a2e-88e8-2abd58a26137'
+      };
+
+      return fetch(url, {
+        method: 'delete',
+        headers: headers
+      })
+      .then(response => response.json());
+    }
+
+    deleteData('https://api.heroku.com/apps/obadiscordbot/dynos/')
+      .then(data => console.log('200'));
+  </script>
+</body>
+</html>
